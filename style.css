@@ -36,6 +36,14 @@
     
     
 }
+.box4 {
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 300px;
+    height: 100px;
+    
+    
+}
 .classNameText {
     font-family: Arial, Helvetica, sans-serif;
     
@@ -77,6 +85,8 @@
     
 }
 .body {
+min-width:200px; // Suppose you want minimum width of 1000px
+   _width: expression( document.body.clientWidth > 200 ? "1000px" : "auto" );
   background-color: #f0dfbd9c;
   padding: 20px;
   resize: both;
@@ -116,44 +126,21 @@
 
 /* Smartphones (portrait and landscape) ---------- */
 /*@media screen and (min-width: 320px) and (max-width: 480px){
-        .dodawanie{
-    margin-left: 40px;
-    margin-top:40px;
-    font-family: Arial, Helvetica, sans-serif;
-    
-    
-}
+        
    .container {
-    margin-top:45px;
-    margin: 0 auto;
-    width: 300px;
-    background: #2aa3d242;
-    box-sizing: border-box;
-    text-align: center;
-    min-width:300px;
+    
 }
 }*/
 /* Smartphones (portrait) ---------- */
 /*@media screen and (min-width: 100px) and (max-width: 320px){
      .container {
-    margin-top:45px;
-    margin: 0 auto;
-    width: 300px;
-    background-color: #FFFFFF;
-    box-sizing: border-box;
-    text-align: center;
-    min-width:300px;
+    
 }
 }*/
 /* Smartphones (landscape) ---------- */
 /*@media screen and (min-width: 321px) and (max-width: 600px){
  .container {
-        margin-top:45px;
-        width: 300px;
-        background: #FFFFFF;
-        padding: 0 10px;
-        text-align: center;
-        min-width:200px;
+        
     }
 }*/
 .container {
@@ -168,46 +155,39 @@
 /* Mobile phones (portrait and landscape) ---------- */
 /*@media screen and (max-width: 767px){
     .container {
-        margin-top:45px;
-        width: 300px;
-        background: #2aa3d242;
-        padding: 0 10px;
-        text-align: center;
-        min-width:300px;
+       
     }
 }*/
 /* Tablets and iPads (portrait and landscape) ---------- */
-@media screen and (min-width: 768px) and (max-width: 1023px){
+@media screen and (max-width: 768px) {
     .container {
-        margin-top:45px;
-        width: 300px;
-        background: #2aa3d242;
-        padding: 0 10px;
-        text-align: center;
-        min-width:300px;
+        background-color: #0ab7dfb3;
     }
+    .box4 {
+    width: 177px;
+  height: 47px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  resize: none;
+  
+ }
+ .column {
+    display: inline-table;
+    margin-top: 20px;
+    margin-left: 20px;
+ 
+}
+
 }
 /* Low resolution desktops and laptops ---------- */
 /*@media screen and (min-width: 1024px) {
     .container {
-        margin-top:45px;
-        width: 300px;
-        background: #2aa3d242;
-        padding: 0 15px;
-        text-align: center;
-        min-width:300px;
+        
     }
 }*/
 /* High resolution desktops and laptops ---------- */
 /*@media screen and (min-width: 1280px) {
     .container {
-        text-align: center;
-        margin-top:45px;
-        width: 300px;
-        background: #2aa3d242;
         
-        padding: 0 20px;
-        
-        min-width:300px;
     }
 }

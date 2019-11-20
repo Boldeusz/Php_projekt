@@ -9,8 +9,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
    $title = mysqli_real_escape_string($db,$_POST['title']);
    $desc = mysqli_real_escape_string($db,$_POST['description']);
    $user = mysqli_real_escape_string($db,$_POST['autor']);
-    echo $title;
-    echo $desc;
+    //echo $title;
+   // echo $desc;
 
 /*
     foreach ($_POST as $key => $value) {
@@ -22,15 +22,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
    $result = mysqli_query($db,$sql);
    //echo $row;
    $rows = mysqli_fetch_array($result);
-   echo "Petla <br/>";
+   //echo "Petla <br/>";
 /*
    foreach ($rows = mysqli_fetch_array($result) as $key => $value) {
      echo $key.' =>'.$value.'<br/>';
    }
    */
-   foreach ($rows as $key => $value) {
-     echo $key.' =>'.$value.'<br/>';
-   }
+   /*foreach ($rows as $key => $value) {
+     echo $key.' '.$value.'<br/>';
+   }*/
    /*
    echo "Petla </br>";
    foreach ($username_array as $key => $value) {
@@ -45,9 +45,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
    $idUsers = gettype($rows['id']);
    $numerid = intval($rows['id']);
 
-   echo "numer: ";
+   // echo "numer: ";
 
-   echo $numerid.'<br/>';
+  // echo $numerid.'<br/>';
    var_dump($numerid);
    $sql = "INSERT INTO `zadania` (`tytul`, `opis`, `user`) VALUES ('$title', '$desc', '$numerid')";
    //$sql = "INSERT INTO 'zadania' (tytul,opis,user)VALUES('$title','$desc','$username_array[0]')";
@@ -70,11 +70,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <body class ="body">
     <h1 class = "container">Dodawanie zadań</h1>
+    <h2 ><a class ="anotherText" href = "welcome.php">Powrot do poprzedniej strony</a></h2>
 
        <div class ="dodawanie">
          <form action = "" method = "post">
             <label>Tytuł  :</label><input type = "text" name = "title" class = "box3"/><br /><br />
-            <label>Opis :</label><textarea rows="4" cols="50" name = "description" class = "box3" /></textarea><br/><br />
+            <label>Opis :</label><textarea type ="text "name = "description" class = "box4" /></textarea><br/><br />
             <label>Autor :</label><input type = "text" name = "autor" class = "box3" value="<?php echo $login_session;?>" /><br/><br />
             <input type = "submit" value = " Dodaj " class = "btn-link2"/><br />
          </form>
