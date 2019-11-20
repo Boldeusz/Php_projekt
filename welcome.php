@@ -32,35 +32,44 @@ $result2 = mysqli_query($db,$sql2);
 <html>
 
    <head>
-      <title>Welcome</title>
+      
       <link rel="stylesheet" type="text/css" href="style.css">
    </head>
 
-   <body>
-      <h1 class = "container">Welcome <?php echo $login_session; ?></h1>
+   <body class ="body">
+      <h1 class = "container">Welcome <?php echo $login_session; ?> user</h1>
+      <h2 ><a class ="anotherText" href = "dodajzadanie.php">Dodawanie zadań</a></h2>
+      <h2><a class ="anotherText" href = "logout.php">Wyloguj</a></h2>
       <?php
       while($row3 = mysqli_fetch_assoc($result2)){
          if ($keyUser[0] == 0) {
-         echo $row3["tytul"] .'=>';
-         echo $row3["opis"]. '=>';
-         echo $username_array[$row3["user"]-1];
-         echo '<form action="modify.php" method="post"><button type="submit" name="edytuj" value='.$row3["id"].' class="btn-link">Modyfikuj</button></form>';
-         echo '<form action="delete.php" method="post"><button type="submit" name="usun" value='.$row3["id"].' class="btn-link">Usuń</button></form>';
+         echo '<div class = "column">' .'User: ' . $username_array[$row3["user"]-1]. '<br/>';
+         echo 'Rodzaj zadania: '. $row3["tytul"] .' ';
          echo '<br/>';
+         echo 'Opis zadania: ' .$row3["opis"];
+         echo '<br/>';
+         
+         
+         echo '<form action="modify.php" method="post" class = "wiersz"><button type="submit" name="edytuj" value='.$row3["id"].' class="btn-link">Modyfikuj</button></form>';
+         
+         echo '<form action="delete.php" method="post" class = "wiersz"><button type="submit" name="usun" value='.$row3["id"].' class="btn-link">Usuń</button></form>';
+         echo '<br/></div>';
          }
          elseif($keyUserRight == $row3["user"]){
-            echo $row3["tytul"] .'=>';
-            echo $row3["opis"];
-            echo '<form action="modify.php" method="post"><button type="submit" name="edytuj" value='.$row3["id"].' class="btn-link">Modyfikuj</button></form>';
-            echo '<form action="delete.php" method="post"><button type="submit" name="usun" value='.$row3["id"].' class="btn-link">Usuń</button></form>';
+            echo '<div class = "column">' . 'Rodzaj zadania: ' .$row3["tytul"] .' ';
             echo '<br/>';
+            echo 'Opis zadania: ' .$row3["opis"];
+            echo '<br/>';
+            echo '<form action="modify.php" method="post" class = "wiersz"><button type="submit" name="edytuj" value='.$row3["id"].' class="btn-link">Modyfikuj</button></form>';
+            echo '<form action="delete.php" method="post" class = "wiersz"><button type="submit" name="usun" value='.$row3["id"].' class="btn-link">Usuń</button></form>';
+            echo '<br/></div>';
          }
       }
 
 
       ?>
-      <h2><a href = "dodajzadanie.php">Dodawanie zadań</a></h2>
-      <h2><a href = "logout.php">Sign Out</a></h2>
+      
+      
    </body>
 
 </html>

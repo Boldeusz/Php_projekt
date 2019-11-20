@@ -23,7 +23,7 @@
 
          header("location: welcome.php");
       }else {
-         $error = "Your Login Name or Password is invalid";
+         $error = "Podałeś zły login lub hasło. Spróbuj jeszcze raz.";
       }
    }
 

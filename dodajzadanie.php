@@ -1,6 +1,6 @@
 <?php
 include('session.php');
-echo "Dodaj zadanie </br>";
+
 
 $error ="";
 if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -63,18 +63,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
  <html>
 
     <head>
-       <title>Dodawanie Zadań</title>
+       
+       <link rel="stylesheet" type="text/css" href="style.css">
 
     </head>
 
-    <body bgcolor = "#FFFFFF">
+    <body class ="body">
+    <h1 class = "container">Dodawanie zadań</h1>
 
-       <div align = "center">
+       <div class ="dodawanie">
          <form action = "" method = "post">
-            <label>Tytuł  :</label><input type = "text" name = "title" class = "box"/><br /><br />
-            <label>Opis :</label><textarea rows="4" cols="50" name = "description" class = "box" /></textarea><br/><br />
-            <label>Autor :</label><input type = "text" name = "autor" class = "box" value="<?php echo $login_session;?>" /><br/><br />
-            <input type = "submit" value = " Submit "/><br />
+            <label>Tytuł  :</label><input type = "text" name = "title" class = "box3"/><br /><br />
+            <label>Opis :</label><textarea rows="4" cols="50" name = "description" class = "box3" /></textarea><br/><br />
+            <label>Autor :</label><input type = "text" name = "autor" class = "box3" value="<?php echo $login_session;?>" /><br/><br />
+            <input type = "submit" value = " Dodaj " class = "btn-link2"/><br />
          </form>
        </body>
 </html>
